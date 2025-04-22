@@ -9,7 +9,7 @@ const Navbar = () => {
         <NavLink to='/dashboard'>Dashboard</NavLink>
     </>
     return (
-        <div className="navbar max-w-11/12 mx-auto">
+        <div className="navbar max-w-7xl mx-auto fixed top-0 z-50 left-1/2 -translate-x-1/2 ">
             <div className="navbar-start">
                 <div className="dropdown order-2">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
