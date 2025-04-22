@@ -9,7 +9,7 @@ import galleryImg6 from '../assets/gallery-6.jpg'
 
 const Home = () => {
     return (
-        <div className="max-w-7xl mx-auto mt-28">
+        <div className="mt-28">
             {/* banner section start */}
             <section>
                 <Banner></Banner>
@@ -17,14 +17,14 @@ const Home = () => {
             {/* banner section end */}
 
             {/* about section start */}
-            <section className="space-y-4 mb-20">
-                <h2 className="text-center text-2xl font-medium mt-10">About Us</h2>
+            <section className="max-w-7xl mx-auto space-y-4 mb-20">
+                <h2 className="text-center text-2xl md:text-4xl font-medium mt-20">About Us</h2>
 
                 <div className="hero">
                     <div className="hero-content flex-col lg:flex-row-reverse">
                         <img
                             src={heroImg}
-                            className="max-w-md rounded-lg shadow-2xl"
+                            className="rounded-lg"
                         />
                         <div>
                             <h1 className="text-5xl font-bold">Our Mission</h1>
@@ -49,8 +49,8 @@ const Home = () => {
 
 
             {/* how it work section start */}
-            <section>
-                <h2 className="text-center text-2xl font-medium">How It Works</h2>
+            <section className="max-w-7xl mx-auto">
+                <h2 className="text-center text-2xl md:text-4xl font-medium">How It Works</h2>
 
                 <ol className="list-decimal pl-7 space-y-3">
                     <li className="text-xl font-medium">Donating Winter Clothing</li>
@@ -88,19 +88,44 @@ const Home = () => {
 
 
             {/* photo gallery start */}
-            <section className="my-20">
+            <section className="max-w-7xl mx-auto my-20">
                 <h2 className="text-2xl font-medium text-center py-5 bg-blue-900 text-white">Photo Gallery</h2>
-                <div className="grid grid-cols-3 gap-5">
-                    <div><img className="size-full object-cover rounded-sm" src={galleryImg1} alt="" /></div>
-                    <div><img className="size-full object-cover rounded-sm" src={galleryImg2} alt="" /></div>
-                    <div><img className="size-full object-cover rounded-sm" src={galleryImg3} alt="" /></div>
-                    <div><img className="size-full object-cover rounded-sm" src={galleryImg4} alt="" /></div>
-                    <div><img className="size-full object-cover rounded-sm" src={galleryImg5} alt="" /></div>
-                    <div><img className="size-full object-cover rounded-sm" src={galleryImg6} alt="" /></div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div><img className="size-full object-cover rounded-sm hover:opacity-75" src={galleryImg1} alt="" /></div>
+                    <div><img className="size-full object-cover rounded-sm hover:opacity-75" src={galleryImg2} alt="" /></div>
+                    <div><img className="size-full object-cover rounded-sm hover:opacity-75" src={galleryImg3} alt="" /></div>
+                    <div><img className="size-full object-cover rounded-sm hover:opacity-75" src={galleryImg4} alt="" /></div>
+                    <div><img className="size-full object-cover rounded-sm hover:opacity-75" src={galleryImg5} alt="" /></div>
+                    <div><img className="size-full object-cover rounded-sm hover:opacity-75" src={galleryImg6} alt="" /></div>
                 </div>
             </section>
-
             {/* photo gallery start */}
+
+
+            {/* people helped start */}
+            <section style={{ backgroundImage: `url(${galleryImg6})` }}
+                className='bg-no-repeat bg-cover bg-bottom py-56 hidden md:flex max-w-7xl mx-auto rounded'>
+
+                <div>
+
+                    {/* <h2 className="uppercase font-extrabold text-2xl text-gray-100 py-3">take care of <br /> homeless <br /> people with your <br /> support</h2> */}
+
+                    <div className="bg-gray-600 flex items-center w-3/5 text-white rounded">
+                        <div className="flex-3/5 p-10">
+                            <h3 className="text-xl font-semibold text-green-600 uppercase">Innovative Care</h3>
+                            <p className="text-justify">Help to create a better future for the children who are deprived from the facility of a basic lifestyle. Join the Winter Clothing Donation donation program.</p>
+                        </div>
+                        <div className="divider divider-horizontal divider-start"></div>
+                        <div className="flex flex-col justify-center items-center p-10">
+                            <h3 className="font-medium text-lg uppercase">people helped</h3>
+                            <p className="text-green-600 font-bold text-2xl"><span>5000+</span></p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+            {/* people helped end */}
 
 
 

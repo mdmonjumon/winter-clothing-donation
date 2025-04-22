@@ -10,16 +10,16 @@ const Banner = () => {
     const AutoplaySlider = withAutoplay(AwesomeSlider);
 
     return (
-        <div className='my-10'>
+        <div className='max-w-7xl mx-auto my-10'>
 
 
-            <AutoplaySlider className='h-[calc(100vh-200px)]'
+            <AutoplaySlider className='md:h-[calc(100vh-200px)]'
                 play={true}
                 cancelOnInteraction={false}
                 interval={6000}
             >
-                <div className=''>
-                    <img src={bannerImg2} alt="" />
+                <div className='h-full w-full'>
+                    <img className='size-full object-cover' src={bannerImg2} alt="" />
                 </div>
                 <div className='h-full'>
                     <img className='size-full object-cover' src={bannerImg1} alt="" />
