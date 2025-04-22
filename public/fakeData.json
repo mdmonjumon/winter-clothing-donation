@@ -1,0 +1,114 @@
+[
+    {
+      "id": 1,
+      "title": "Warm Coats for Kids",
+      "image": "https://i.ibb.co.com/v6x3dLNW/Warm-Coats-for-Kids.jpg",
+      "description": "Every winter, thousands of children face the harsh cold without proper clothing. Our campaign ensures that every child, no matter their background, receives a warm, cozy coat to brave the cold. Join us in spreading warmth and smiles this season.",
+      "status": "Active",
+      "contactInfo": {
+        "name": "Rahim Uddin",
+        "email": "rahim.kidswarmth@example.com",
+        "phone": "+8801711001100"
+      },
+      "division": "Dhaka"
+    },
+    {
+      "id": 2,
+      "title": "Blankets for the Homeless",
+      "image": "https://i.ibb.co.com/6RK4Zrfr/Blankets-for-the-Homeless.jpg",
+      "description": "The biting cold can be life-threatening for homeless individuals. Through this campaign, we collect and distribute blankets that provide crucial warmth during freezing nights. A small act can mean a world of difference to someone in need.",
+      "status": "Active",
+      "contactInfo": {
+        "name": "Sumaiya Akter",
+        "email": "sumaiya.blanketdrive@example.com",
+        "phone": "+8801811002200"
+      },
+      "division": "Chattogram"
+    },
+    {
+      "id": 3,
+      "title": "Hats and Gloves Drive",
+      "image": "https://i.ibb.co.com/yBcP1dQj/Hats-and-Gloves-Drive.jpg",
+      "description": "Extremities are often the first to suffer from frostbite. This winter, help us gather hats, gloves, and scarves to protect our community members. Together, we can keep everyone a little bit warmer, one accessory at a time.",
+      "status": "Upcoming",
+      "contactInfo": {
+        "name": "Nayeem Hasan",
+        "email": "nayeem.hatsgloves@example.com",
+        "phone": "+8801911003300"
+      },
+      "division": "Khulna"
+    },
+    {
+      "id": 4,
+      "title": "Winter Shoes for Students",
+      "image": "https://i.ibb.co.com/3mJnxhh4/Winter-Shoes-for-Students.jpg",
+      "description": "Proper footwear is essential for kids walking to school in icy conditions. Our mission is to supply durable, insulated winter shoes to students from low-income families so they can attend school safely and comfortably.",
+      "status": "Active",
+      "contactInfo": {
+        "name": "Fatema Jahan",
+        "email": "fatema.shoesforall@example.com",
+        "phone": "+8801511004400"
+      },
+      "division": "Rajshahi"
+    },
+    {
+      "id": 5,
+      "title": "Senior Citizens' Warmth Campaign",
+      "image": "https://i.ibb.co.com/prXFDdVy/Senior-Citizens-Warmth-Campaign.jpg",
+      "description": "Senior citizens are particularly vulnerable to the cold. Our campaign focuses on delivering winter jackets, thermal wear, and heated blankets to the elderly, ensuring they stay safe and healthy throughout the winter season.",
+      "status": "Completed",
+      "contactInfo": {
+        "name": "Mohammad Karim",
+        "email": "karim.seniorcare@example.com",
+        "phone": "+8801611005500"
+      },
+      "division": "Sylhet"
+    },
+    {
+      "id": 6,
+      "title": "Snow Gear for Refugee Families",
+      "image": "https://i.ibb.co.com/bTcNC95/Snow-Gear-for-Refugee-Families.jpg",
+      "description": "Newly arrived refugee families often face their first winter without appropriate gear. We're collecting snow boots, thick jackets, gloves, and hats to help them transition comfortably into their new environment and start fresh.",
+      "status": "Active",
+      "contactInfo": {
+        "name": "Rumana Ahmed",
+        "email": "rumana.refugeesupport@example.com",
+        "phone": "+8801711006600"
+      },
+      "division": "Barishal"
+    },
+    {
+      "id": 7,
+      "title": "School Winter Kits",
+      "image": "https://i.ibb.co.com/PZzML53C/School-Winter-Kits.jpg",
+      "description": "Help schoolchildren succeed through the winter months with complete winter kits including jackets, gloves, scarves, and boots. A small donation can keep a child's mind focused on learning instead of the cold.",
+      "status": "Completed",
+      "contactInfo": {
+        "name": "Nusrat Jahan",
+        "email": "nusrat.schoolkits@example.com",
+        "phone": "+8801511009900"
+      },
+      "division": "Dhaka"
+    },
+    {
+        "id": 11,
+        "title": "Winter Relief for Rural Families",
+        "image": "https://i.ibb.co.com/bTcNC95/Snow-Gear-for-Refugee-Families.jpg",
+        "description": "Many rural communities struggle to afford winter essentials. Donate to supply blankets, sweaters, and socks to underprivileged families.",
+        "status": "Active",
+        "contactInfo": {
+          "name": "Fahmida Yasmin",
+          "email": "fahmida.ruralrelief@example.com",
+          "phone": "+8801811001111"
+        },
+        "division": "Khulna"
+      }
+  ]
+  
+
+
+
+
+
+
+
