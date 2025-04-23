@@ -1,16 +1,42 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash, } from 'react-icons/fa6';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Register = () => {
+    // show password state
     const [show, setShow] = useState(false);
+    // context
+    const { createNewUser } = useContext(AuthContext);
+    const navigate = useNavigate()
+
+
+    const handleRegister = (e) => {
+        e.preventDefault();
+        const form = new FormData(e.target);
+        const email = form.get('email')
+        const password = form.get('password')
+
+
+        createNewUser(email, password)
+        .then(()=>{
+            toast('Register success')
+            navigate('/')
+        })
+        .catch(()=>{
+            toast('Registration failed. try again with valid information');
+        })
+
+
+    }
 
     return (
         <div className="my-24 max-w-7xl mx-auto flex flex-col items-center">
             <h1 className="text-5xl font-bold text-center my-10">Register now!</h1>
             <div className="card bg-base-100 w-full max-w-md shrink-0 shadow-xl">
                 <div className="card-body">
-                    <form action="">
+                    <form onSubmit={handleRegister} action="">
                         <fieldset className="space-y-4">
                             <div>
                                 <label className="text-lg">Name</label>
@@ -25,12 +51,12 @@ const Register = () => {
 
                             <div>
                                 <label className="text-lg">Email</label>
-                                <input type="email" className="input w-full" placeholder="Email" />
+                                <input type="email" name='email' className="input w-full" placeholder="Email" />
                             </div>
 
                             <div className='relative'>
                                 <label className="text-lg">Password</label>
-                                <input type={show ? 'text' : 'password'} className="input w-full" placeholder="Password" />
+                                <input type={show ? 'text' : 'password'} name='password' className="input w-full" placeholder="Password" />
 
                                 {
                                     show ?

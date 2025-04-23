@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { ToastContainer } from "react-toastify";
 
 
 
@@ -10,13 +11,25 @@ const MainLayout = () => {
             <header>
                 <Navbar></Navbar>
             </header>
-            <main>
+            <main className="px-2">
                 <Outlet></Outlet>
             </main>
 
             <footer>
                 <Footer></Footer>
             </footer>
+
+
+
+            {/* toast */}
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                pauseOnFocusLoss
+                pauseOnHover
+                theme="light"
+            />
         </div>
     );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CampaignCard = ({ campaign }) => {
-    const { title, description, image, division } = campaign;
+    const { title, description, image, division, id } = campaign;
     return (
         <div className="card shadow-sm">
             <figure className='h-72'>
@@ -16,7 +16,7 @@ const CampaignCard = ({ campaign }) => {
                 <p className='text-lg text-justify'>{description}</p>
                 <p><span className='text-lg font-semibold'>Division: </span> <span className='text-lg'>{division}</span></p>
                 <div className="card-actions justify-start">
-                    <Link to='/login' className="btn btn-primary">Donate Now</Link>
+                    <Link to={`${id}`} className="btn btn-primary">Donate Now</Link>
                 </div>
             </div>
         </div>

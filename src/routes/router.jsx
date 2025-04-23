@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import DonationCampaigns from "../pages/DonationCampaigns";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import DonateDetails from "../pages/DonateDetails";
 
 
 const router = createBrowserRouter([
@@ -28,6 +29,11 @@ const router = createBrowserRouter([
             {
                 path:'/register',
                 element:<Register></Register>
+            },
+            {
+                path:'/donation-campaigns/:id',
+                element:<DonateDetails></DonateDetails>,
+                loader: ()=>fetch('/fakeData.json')
             }
         ]
     }

@@ -13,7 +13,7 @@ const Banner = () => {
         <div className='max-w-7xl mx-auto my-10'>
 
 
-            <AutoplaySlider className='md:h-[calc(100vh-200px)]'
+            <AutoplaySlider className='lg:h-[calc(100vh-200px)]'
                 play={true}
                 cancelOnInteraction={false}
                 interval={6000}
@@ -21,7 +21,7 @@ const Banner = () => {
                 <div className='h-full w-full'>
                     <img className='size-full object-cover' src={bannerImg2} alt="" />
                 </div>
-                <div className='h-full'>
+                <div className='h-full w-full'>
                     <img className='size-full object-cover' src={bannerImg1} alt="" />
                 </div>
                 

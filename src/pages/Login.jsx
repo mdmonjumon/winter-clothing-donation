@@ -1,25 +1,44 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
+import { toast } from "react-toastify";
 
 
 const Login = () => {
     const [show, setShow] = useState(false);
+    const { signIn } = useContext(AuthContext);
+
+    // login
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const form = new FormData(e.target);
+        const email = form.get('email');
+        const password = form.get('password')
+        signIn(email, password)
+        .then(()=>{
+            toast.success('Login Success')
+        })
+        .catch(()=>{
+            toast.error('Login failed. try again with valid email & password');
+        })
+
+    }
     return (
         <div className="my-24 max-w-7xl mx-auto flex flex-col items-center">
             <h1 className="text-5xl font-bold text-center my-10">Login now!</h1>
             <div className="card bg-base-100 w-full max-w-md shrink-0 shadow-xl">
                 <div className="card-body">
-                    <form action="">
+                    <form onSubmit={handleLogin} action="">
                         <fieldset className="space-y-4">
                             <div>
                                 <label className="text-lg">Email</label>
-                                <input type="email" className="input w-full" placeholder="Email" />
+                                <input type="email" name="email" className="input w-full" placeholder="Email" />
                             </div>
 
                             <div className='relative'>
                                 <label className="text-lg">Password</label>
-                                <input type={show ? 'text' : 'password'} className="input w-full" placeholder="Password" />
+                                <input type={show ? 'text' : 'password'} name="password" className="input w-full" placeholder="Password" />
 
                                 {
                                     show ?
