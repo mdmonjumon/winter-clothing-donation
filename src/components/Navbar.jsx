@@ -1,12 +1,19 @@
+import { useContext } from 'react';
 import logo from '../assets/logo.png'
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../provider/AuthProvider';
+import { FaUserCircle } from 'react-icons/fa';
 
 const Navbar = () => {
+    const { user, userLogout } = useContext(AuthContext);
+
     const links = <>
         <NavLink to='/'>Home</NavLink>
         <NavLink to='/donation-campaigns'>Donation Campaigns</NavLink>
         <NavLink to='/how-to-help'>How to Help</NavLink>
-        <NavLink to='/dashboard'>Dashboard</NavLink>
+        {
+            user && <NavLink to='/dashboard'>Dashboard</NavLink>
+        }
     </>
     return (
         <div className="navbar max-w-7xl mx-auto fixed top-0 z-50 left-1/2 -translate-x-1/2 bg-white">
@@ -30,8 +37,17 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='/login' className="btn btn-accent text-lg">Login</Link>
-                
+
+                {
+                    user && user.photoURL ?
+                        <img className='h-10 w-10 size-full rounded-full mr-2' src={user.photoURL} alt={user.displayName} />
+                        :
+                        <FaUserCircle className='mr-2 text-[40px]' />
+                }
+
+                {
+                    user && user.email ? <button onClick={userLogout} to='/login' className="btn btn-ghost text-lg">Logout</button> : <Link to='/login' className="btn btn-accent text-lg">Login</Link>
+                }
             </div>
         </div>
     );

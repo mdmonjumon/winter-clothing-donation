@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
 
@@ -8,6 +8,8 @@ import { toast } from "react-toastify";
 const Login = () => {
     const [show, setShow] = useState(false);
     const { signIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     // login
     const handleLogin = (e) => {
@@ -15,10 +17,10 @@ const Login = () => {
         const form = new FormData(e.target);
         const email = form.get('email');
         const password = form.get('password')
+
         signIn(email, password)
         .then(()=>{
-            toast.success('Login Success');
-
+            navigate(location.state? location.state:'/');
         })
         .catch(()=>{
             toast.error('Login failed. try again with valid email & password');

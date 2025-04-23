@@ -8,24 +8,29 @@ const Register = () => {
     // show password state
     const [show, setShow] = useState(false);
     // context
-    const { createNewUser } = useContext(AuthContext);
+    const { createNewUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate()
 
 
     const handleRegister = (e) => {
         e.preventDefault();
         const form = new FormData(e.target);
-        const email = form.get('email')
-        const password = form.get('password')
+        const name = form.get('name');
+        const photo = form.get('photo');
+        const email = form.get('email');
+        const password = form.get('password');
 
 
         createNewUser(email, password)
-        .then(()=>{
-            navigate('/')
-        })
-        .catch(()=>{
-            toast('Registration failed. try again with valid information');
-        })
+            .then(() => {
+                updateUserProfile({ displayName: name, photoURL: photo })
+                    .then(() => {
+                        navigate('/');
+                    })
+            })
+            .catch(() => {
+                toast('Registration failed. try again with valid information');
+            })
 
 
     }
