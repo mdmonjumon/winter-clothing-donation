@@ -21,7 +21,6 @@ const Register = () => {
 
         createNewUser(email, password)
         .then(()=>{
-            toast('Register success')
             navigate('/')
         })
         .catch(()=>{

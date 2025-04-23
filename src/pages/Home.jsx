@@ -121,7 +121,6 @@ const Home = () => {
                             <p className="text-green-600 font-bold text-2xl"><span>5000+</span></p>
                         </div>
                     </div>
-
                 </div>
 
             </section>

@@ -17,7 +17,8 @@ const Login = () => {
         const password = form.get('password')
         signIn(email, password)
         .then(()=>{
-            toast.success('Login Success')
+            toast.success('Login Success');
+
         })
         .catch(()=>{
             toast.error('Login failed. try again with valid email & password');

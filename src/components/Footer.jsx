@@ -5,7 +5,7 @@ import { IoMdHome, IoMdMail } from 'react-icons/io';
 
 const Footer = () => {
     return (
-        <div className='bg-[#E9EFEA] py-10 md:py-28 px-3'>
+        <div className='bg-[#E9EFEA] py-10 md:py-28 mt-20 px-3'>
 
             <div className="flex flex-col md:flex-row items-center md:justify-between gap-10 max-w-7xl mx-auto mb-20">
 
@@ -15,8 +15,6 @@ const Footer = () => {
                     <img className='w-32' src={logoImg} alt="" />
                     <h2 className='font-semibold text-xl'>Winter Clothing Donation</h2>
                 </div>
-
-
 
 
                 <div className='space-y-3'>
