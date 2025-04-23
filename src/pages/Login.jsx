@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 
 const Login = () => {
     const [show, setShow] = useState(false);
-    const { signIn } = useContext(AuthContext);
+    const { signIn, singInWithGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -27,6 +27,19 @@ const Login = () => {
         })
 
     }
+
+    const handleLoginWithGoogle=()=>{
+        singInWithGoogle()
+        .then(()=>{
+            navigate(location.state? location.state:'/');
+        })
+        .catch(()=>{
+            toast.error('Login failed! try again');
+        })
+    }
+
+
+
     return (
         <div className="my-24 max-w-7xl mx-auto flex flex-col items-center">
             <h1 className="text-5xl font-bold text-center my-10">Login now!</h1>
@@ -52,12 +65,21 @@ const Login = () => {
 
                             </div>
 
-                            <button className="btn btn-neutral w-full mt-4">Login</button>
+                            <div>
+                                <span className="underline cursor-pointer">Forget Password</span>
+                            </div>
+
+                            <button className="btn btn-accent w-full mt-4">Login</button>
                         </fieldset>
                     </form>
                 </div>
             </div>
             <p className="text-lg mt-8">Don't have an account? <Link to='/register' className="text-rose-600">Register</Link></p>
+
+
+            <div>
+                <button onClick={handleLoginWithGoogle} className="btn btn-ghost text-lg text-green-600 my-4">Login with Google</button>
+            </div>
 
         </div>
     );
