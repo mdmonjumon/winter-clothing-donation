@@ -1,15 +1,19 @@
 import React, { useContext, useState } from 'react';
-import { FaEye, FaEyeSlash, } from 'react-icons/fa6';
-import { Link, useNavigate } from 'react-router-dom';
+import { FaEye, FaEyeSlash, FaGoogle, } from 'react-icons/fa6';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import { toast } from 'react-toastify';
+import { SlSocialGoogle } from 'react-icons/sl';
 
 const Register = () => {
     // show password state
     const [show, setShow] = useState(false);
     // context
-    const { createNewUser, updateUserProfile } = useContext(AuthContext);
+    const { createNewUser, updateUserProfile, singInWithGoogle } = useContext(AuthContext);
     const navigate = useNavigate()
+
+    const location = useLocation();
+    console.log(location);
 
 
     const handleRegister = (e) => {
@@ -29,10 +33,21 @@ const Register = () => {
                     })
             })
             .catch(() => {
-                toast('Registration failed. try again with valid information');
+                toast.error('Registration failed. try again with valid information');
             })
 
 
+    }
+
+
+    const handleLoginWithGoogle = () => {
+        singInWithGoogle()
+            .then(() => {
+                navigate(location.state ? location.state : '/');
+            })
+            .catch(() => {
+                toast.error('Login failed! try again');
+            })
     }
 
     return (
@@ -44,23 +59,23 @@ const Register = () => {
                         <fieldset className="space-y-4">
                             <div>
                                 <label className="text-lg">Name</label>
-                                <input type="text" name='name' className="input w-full" placeholder="Name" />
+                                <input type="text" name='name' className="input w-full" placeholder="Name" required />
                             </div>
 
 
                             <div>
                                 <label className="text-lg">Photo URL</label>
-                                <input type="text" name='photo' className="input w-full" placeholder="Photo url" />
+                                <input type="text" name='photo' className="input w-full" placeholder="Photo url" required />
                             </div>
 
                             <div>
                                 <label className="text-lg">Email</label>
-                                <input type="email" name='email' className="input w-full" placeholder="Email" />
+                                <input type="email" name='email' className="input w-full" placeholder="Email" required />
                             </div>
 
                             <div className='relative'>
                                 <label className="text-lg">Password</label>
-                                <input type={show ? 'text' : 'password'} name='password' className="input w-full" placeholder="Password" />
+                                <input type={show ? 'text' : 'password'} name='password' className="input w-full" placeholder="Password" required />
 
                                 {
                                     show ?
@@ -71,13 +86,18 @@ const Register = () => {
 
                             </div>
 
-                            <button className="btn btn-neutral w-full mt-4">Register</button>
+                            <button className="btn btn-accent w-full mt-4">Register</button>
                         </fieldset>
                     </form>
                 </div>
             </div>
             <p className="text-lg mt-8">Already have an account? <Link to='/login' className="text-rose-600">Login</Link></p>
 
+
+            <div>
+                <button onClick={handleLoginWithGoogle} className="btn btn-accent text-lg my-4">
+                    <FaGoogle className='text-lg' /> Sign up with Google</button>
+            </div>
         </div>
     );
 };

@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { FaEye, FaEyeSlash } from "react-icons/fa6";
+import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa6";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
@@ -19,23 +19,23 @@ const Login = () => {
         const password = form.get('password')
 
         signIn(email, password)
-        .then(()=>{
-            navigate(location.state? location.state:'/');
-        })
-        .catch(()=>{
-            toast.error('Login failed. try again with valid email & password');
-        })
+            .then(() => {
+                navigate(location.state ? location.state : '/');
+            })
+            .catch(() => {
+                toast.error('Login failed. try again with valid email & password');
+            })
 
     }
 
-    const handleLoginWithGoogle=()=>{
+    const handleLoginWithGoogle = () => {
         singInWithGoogle()
-        .then(()=>{
-            navigate(location.state? location.state:'/');
-        })
-        .catch(()=>{
-            toast.error('Login failed! try again');
-        })
+            .then(() => {
+                navigate(location.state ? location.state : '/');
+            })
+            .catch(() => {
+                toast.error('Login failed! try again');
+            })
     }
 
 
@@ -74,11 +74,11 @@ const Login = () => {
                     </form>
                 </div>
             </div>
-            <p className="text-lg mt-8">Don't have an account? <Link to='/register' className="text-rose-600">Register</Link></p>
-
+            <p className="text-lg mt-8">Don't have an account? <Link to='/register' state={location.state} className="text-rose-600">Register</Link></p>
 
             <div>
-                <button onClick={handleLoginWithGoogle} className="btn btn-ghost text-lg text-green-600 my-4">Login with Google</button>
+                <button onClick={handleLoginWithGoogle} className="btn btn-accent text-lg my-4">
+                    <FaGoogle className='text-lg' /> Login with Google</button>
             </div>
 
         </div>
