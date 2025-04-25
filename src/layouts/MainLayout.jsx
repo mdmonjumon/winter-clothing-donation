@@ -11,7 +11,6 @@ const MainLayout = () => {
 
     const {loading} = useContext(AuthContext)
     if(loading){
-        console.log(loading)
         return <Loading></Loading>
     }
     return (

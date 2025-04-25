@@ -7,6 +7,7 @@ import Register from "../pages/Register";
 import DonateDetails from "../pages/DonateDetails";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../pages/Dashboard";
+import UpdateProfile from "../pages/UpdateProfile";
 
 const router = createBrowserRouter([
     {
@@ -28,11 +29,13 @@ const router = createBrowserRouter([
                 element:<PrivateRoute><DonateDetails></DonateDetails></PrivateRoute>,
                 loader: ()=>fetch('/fakeData.json')
             },
-            {
-                path:'/dashboard',
-                element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>
-            }
+
         ]
+    },
+
+    {
+        path:'/dashboard',
+        element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>
     },
 
     {
@@ -42,6 +45,10 @@ const router = createBrowserRouter([
     {
         path:'/register',
         element:<Register></Register>
+    },
+    {
+        path:'/update-profile',
+        element:<PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>
     },
 ])
 

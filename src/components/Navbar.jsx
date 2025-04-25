@@ -5,8 +5,7 @@ import { AuthContext } from '../provider/AuthProvider';
 import { FaUserCircle } from 'react-icons/fa';
 
 const Navbar = () => {
-    const { user, userLogout, loading } = useContext(AuthContext);
-    console.log(user?.displayName, user?.photoURL, loading, user)
+    const { user, userLogout } = useContext(AuthContext);
 
     const links = <>
         <NavLink to='/'>Home</NavLink>
