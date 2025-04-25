@@ -13,7 +13,6 @@ const Register = () => {
     const navigate = useNavigate()
 
     const location = useLocation();
-    console.log(location);
 
 
     const handleRegister = (e) => {
