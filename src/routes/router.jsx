@@ -8,7 +8,6 @@ import DonateDetails from "../pages/DonateDetails";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../pages/Dashboard";
 
-
 const router = createBrowserRouter([
     {
         path:'/',
@@ -25,24 +24,25 @@ const router = createBrowserRouter([
                 loader: ()=>fetch('/fakeData.json')
             },
             {
-                path:'/login',
-                element:<Login></Login>
-            },
-            {
-                path:'/register',
-                element:<Register></Register>
-            },
-            {
                 path:'/donation-campaigns/:id',
                 element:<PrivateRoute><DonateDetails></DonateDetails></PrivateRoute>,
                 loader: ()=>fetch('/fakeData.json')
             },
             {
                 path:'/dashboard',
-                element:<Dashboard></Dashboard>
+                element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>
             }
         ]
-    }
+    },
+
+    {
+        path:'/login',
+        element:<Login></Login>
+    },
+    {
+        path:'/register',
+        element:<Register></Register>
+    },
 ])
 
 

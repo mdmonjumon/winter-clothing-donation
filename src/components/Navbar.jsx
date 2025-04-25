@@ -5,7 +5,8 @@ import { AuthContext } from '../provider/AuthProvider';
 import { FaUserCircle } from 'react-icons/fa';
 
 const Navbar = () => {
-    const { user, userLogout } = useContext(AuthContext);
+    const { user, userLogout, loading } = useContext(AuthContext);
+    console.log(user?.displayName, user?.photoURL, loading, user)
 
     const links = <>
         <NavLink to='/'>Home</NavLink>
@@ -37,17 +38,15 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-
                 {
                     user && user.photoURL ?
-                        <img className='h-10 w-10 size-full rounded-full mr-2' src={user.photoURL} alt={user.displayName} />
-                        :
-                        <FaUserCircle className='mr-2 text-[40px]' />
+                        <img className='h-10 w-10 size-full rounded-full mr-2' src={user?.photoURL} alt={user.displayName} />
+                        : <FaUserCircle className='mr-2 text-[40px]' />
                 }
 
                 {
                     user && user.email ?
-                        <button onClick={userLogout}  className="btn btn-ghost text-lg">Logout</button>
+                        <button onClick={userLogout} className="btn btn-ghost text-lg">Logout</button>
                         :
                         <Link to='/login' className="btn btn-accent text-lg">Login</Link>
                 }

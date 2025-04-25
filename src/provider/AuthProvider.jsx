@@ -7,7 +7,10 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
 
     // user state manage
-    const [user, setUser] = useState();
+    const [user, setUser] = useState(null);
+
+    // manage loading state
+    const [loading, setLoading] = useState(true)
 
     // google auth Provider
     const googleProvider = new GoogleAuthProvider();
@@ -38,13 +41,28 @@ const AuthProvider = ({ children }) => {
     }
 
 
+
+    const passwordValidation = (password) => {
+        const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+        if (!regex.test(password)) {
+            return "Password must be at least 6 characters long and include both uppercase and lowercase letters.";
+        }
+        else {
+            return '';
+        }
+    }
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
-            setUser(currentUser)
+            console.log(currentUser);
+            setUser(currentUser);
+            setLoading(false);
         })
 
         return () => unsubscribe();
     }, [])
+
+
 
 
     const authInfo = {
@@ -53,7 +71,9 @@ const AuthProvider = ({ children }) => {
         userLogout,
         updateUserProfile,
         singInWithGoogle,
-        user
+        passwordValidation,
+        user,
+        loading
     }
 
 

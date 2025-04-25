@@ -2,10 +2,18 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { ToastContainer } from "react-toastify";
-
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
+import Loading from "../pages/Loading";
 
 
 const MainLayout = () => {
+
+    const {loading} = useContext(AuthContext)
+    if(loading){
+        console.log(loading)
+        return <Loading></Loading>
+    }
     return (
         <div>
             <header>

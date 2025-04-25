@@ -96,7 +96,7 @@ const DonateDetails = () => {
                                     <label className="text-xl">Pickup Location</label>
                                     <input type="text" className="input focus:outline-offset-0 w-full" placeholder="Pickup Location" required />
                                 </div>
-
+ 
 
                                 <div>
                                     <label className="text-xl ">Additional Notes</label>
