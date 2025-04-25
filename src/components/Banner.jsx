@@ -19,16 +19,13 @@ const Banner = () => {
                 interval={6000}
             >
                 <div className='h-full w-full'>
-                    <img className='size-full object-cover' src={bannerImg2} alt="" />
+                    <img className='size-full object-fill' src={bannerImg2} alt="" />
                 </div>
                 <div className='h-full w-full'>
-                    <img className='size-full object-cover' src={bannerImg1} alt="" />
+                    <img className='size-full object-fill' src={bannerImg1} alt="" />
                 </div>
                 
             </AutoplaySlider>
-
-
-
         </div>
     );
 };

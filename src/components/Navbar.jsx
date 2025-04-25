@@ -46,7 +46,10 @@ const Navbar = () => {
                 }
 
                 {
-                    user && user.email ? <button onClick={userLogout} to='/login' className="btn btn-ghost text-lg">Logout</button> : <Link to='/login' className="btn btn-accent text-lg">Login</Link>
+                    user && user.email ?
+                        <button onClick={userLogout}  className="btn btn-ghost text-lg">Logout</button>
+                        :
+                        <Link to='/login' className="btn btn-accent text-lg">Login</Link>
                 }
             </div>
         </div>
