@@ -27,9 +27,8 @@ const MainLayout = () => {
             </footer>
 
 
-
-            {/* toast */}
-            <ToastContainer
+             {/* toast */}
+             <ToastContainer
                 position="top-center"
                 autoClose={5000}
                 hideProgressBar={false}

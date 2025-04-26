@@ -8,6 +8,7 @@ import DonateDetails from "../pages/DonateDetails";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../pages/Dashboard";
 import UpdateProfile from "../pages/UpdateProfile";
+import ForgotPassword from "../pages/ForgotPassword";
 
 const router = createBrowserRouter([
     {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
         path:'/update-profile',
         element:<PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>
     },
+    {
+        path:'/forgot-password',
+        element:<ForgotPassword></ForgotPassword>
+    }
 ])
 
 

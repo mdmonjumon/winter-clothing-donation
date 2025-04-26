@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const CampaignCard = ({ campaign }) => {
     const { title, description, image, division, id } = campaign;
     return (
-        <div className="card shadow-sm">
+        <div className="card shadow-sm bg-stone-800 text-white">
             <figure className='h-72'>
                 <img
                     className='size-full object-cover hover:opacity-75'

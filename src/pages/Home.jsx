@@ -6,8 +6,18 @@ import galleryImg3 from '../assets/gallery-3.jpg'
 import galleryImg4 from '../assets/gallery-4.jpg'
 import galleryImg5 from '../assets/gallery-5.jpg'
 import galleryImg6 from '../assets/gallery-6.jpg'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 const Home = () => {
+
+
+
+    useEffect(() => {
+        AOS.init();
+    }, []);
+
     return (
         <div className="mt-28">
             {/* banner section start */}
@@ -91,12 +101,12 @@ const Home = () => {
             <section className="max-w-7xl mx-auto my-20">
                 <h2 className="text-2xl font-medium text-center py-5 bg-blue-900 text-white">Photo Gallery</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                    <div><img className="size-full object-cover rounded-sm hover:opacity-75" src={galleryImg1} alt="" /></div>
-                    <div><img className="size-full object-cover rounded-sm hover:opacity-75" src={galleryImg2} alt="" /></div>
-                    <div><img className="size-full object-cover rounded-sm hover:opacity-75" src={galleryImg3} alt="" /></div>
-                    <div><img className="size-full object-cover rounded-sm hover:opacity-75" src={galleryImg4} alt="" /></div>
-                    <div><img className="size-full object-cover rounded-sm hover:opacity-75" src={galleryImg5} alt="" /></div>
-                    <div><img className="size-full object-cover rounded-sm hover:opacity-75" src={galleryImg6} alt="" /></div>
+                    <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"><img className="size-full object-cover rounded-sm hover:opacity-75" src={galleryImg1} alt="" /></div>
+                    <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="3000"><img className="size-full object-cover rounded-sm hover:opacity-75" src={galleryImg2} alt="" /></div>
+                    <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"><img className="size-full object-cover rounded-sm hover:opacity-75" src={galleryImg3} alt="" /></div>
+                    <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"><img className="size-full object-cover rounded-sm hover:opacity-75" src={galleryImg4} alt="" /></div>
+                    <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="3000"><img className="size-full object-cover rounded-sm hover:opacity-75" src={galleryImg5} alt="" /></div>
+                    <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"><img className="size-full object-cover rounded-sm hover:opacity-75" src={galleryImg6} alt="" /></div>
                 </div>
             </section>
             {/* photo gallery start */}

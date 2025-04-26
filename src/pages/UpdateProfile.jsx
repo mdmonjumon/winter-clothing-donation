@@ -36,12 +36,13 @@ const UpdateProfile = () => {
                         <div className="card-body">
                             <form onSubmit={handleUpdateProfile} action="">
                                 <fieldset className="space-y-4">
+                                    {/* update name */}
                                     <div>
                                         <label className="text-lg">Name</label>
                                         <input type="text" name='name' className="input w-full" placeholder="Name" defaultValue={user?.displayName} required />
                                     </div>
 
-
+                                    {/* update photo by url */}
                                     <div>
                                         <label className="text-lg">Photo URL</label>
                                         <input type="text" name='photo' className="input w-full" placeholder="Photo url" defaultValue={user?.photoURL} required />
