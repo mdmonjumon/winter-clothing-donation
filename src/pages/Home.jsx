@@ -114,18 +114,20 @@ const Home = () => {
 
             {/* people helped start */}
             <section style={{ backgroundImage: `url(${galleryImg6})` }}
-                className='bg-no-repeat bg-cover bg-bottom hidden md:flex max-w-7xl mx-auto rounded'>
+                className='bg-no-repeat bg-cover bg-bottom max-w-7xl mx-auto rounded'>
 
-                <div className="bg-black/55 py-40 pl-6 rounded">
+                <div className="bg-black/55 py-40 p-2 md:pl-6 rounded">
 
                     <h2 className="uppercase font-extrabold text-2xl text-gray-100 py-3">take care of homeless <br /> people with your <br /> support</h2>
 
-                    <div className="bg-gray-600 flex items-center md:w-4/5 lg:w-3/5 text-white rounded">
+                    <div className="bg-gray-600 flex flex-col md:flex-row items-center md:w-4/5 lg:w-3/5 text-white rounded">
                         <div className="lg:flex-3/5 p-10">
                             <h3 className="text-xl font-semibold text-green-600 uppercase">Innovative Care</h3>
                             <p className="text-justify">Help to create a better future for the children who are deprived from the facility of a basic lifestyle. Join the Winter Clothing Donation donation program.</p>
                         </div>
+
                         <div className="divider divider-horizontal divider-start"></div>
+
                         <div className="flex flex-col justify-center items-center p-10">
                             <h3 className="font-medium text-lg uppercase">people helped</h3>
                             <p className="text-green-600 font-bold text-2xl"><span>5000+</span></p>

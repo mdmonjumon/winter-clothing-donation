@@ -29,7 +29,7 @@ const DonateDetails = () => {
                     <p className='text-lg text-justify'>{description}</p>
                 </div>
 
-                <div className="card-body flex-row justify-between pl-2">
+                <div className="card-body md:flex-row justify-between pl-2">
                     <div>
                         <p><span className='text-lg font-semibold'>Division: </span> <span className='text-lg'>{division}</span></p>
                         <p><span className='text-lg font-semibold'>Status: </span> <span className='text-lg font-semibold text-green-600'>{status}</span></p>
