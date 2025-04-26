@@ -20,6 +20,7 @@ const Home = () => {
 
     return (
         <div className="mt-28">
+            <title>Winter Clothing Donation</title>
             {/* banner section start */}
             <section>
                 <Banner></Banner>

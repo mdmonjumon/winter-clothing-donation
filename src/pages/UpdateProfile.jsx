@@ -23,6 +23,7 @@ const UpdateProfile = () => {
 
     return (
         <div>
+            <title>Edit Profile</title>
             <header>
                 <Navbar></Navbar>
             </header>

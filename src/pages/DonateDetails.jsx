@@ -17,6 +17,7 @@ const DonateDetails = () => {
     }
     return (
         <div>
+            <title>Donation Campaigns</title>
             <div className="max-w-7xl card shadow-sm my-32 mx-auto">
                 <figure className=''>
                     <img
@@ -116,11 +117,3 @@ const DonateDetails = () => {
 };
 
 export default DonateDetails;
-
-
-{/* 
-
-<option>Blankets</option>
-<option></option>
-<option></option>
-<option></option> */}

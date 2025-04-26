@@ -10,6 +10,7 @@ const Dashboard = () => {
 
     return (
         <div>
+            <title>Winter Clothing Donation | Dashboard</title>
             <header>
                 <Navbar></Navbar>
             </header>

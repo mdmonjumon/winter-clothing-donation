@@ -61,6 +61,7 @@ const Register = () => {
 
     return (
         <div>
+            <title>Register to Winter Clothing Donation</title>
             <header>
                 <Navbar></Navbar>
             </header>

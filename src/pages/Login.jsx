@@ -42,16 +42,16 @@ const Login = () => {
     }
 
 
-    const handleForgotPassword =()=>{
+    const handleForgotPassword = () => {
         const email = emailRef.current.value;
-        navigate('/forgot-password', {state:email})
+        navigate('/forgot-password', { state: email })
     }
 
 
 
     return (
         <div>
-
+            <title>Login to Winter Clothing Donation</title>
             <header>
                 <Navbar></Navbar>
             </header>
@@ -64,7 +64,7 @@ const Login = () => {
                                 <fieldset className="space-y-4">
                                     <div>
                                         <label className="text-lg">Email</label>
-                                        <input type="email" ref={emailRef} name="email" className="input w-full" placeholder="Email" required/>
+                                        <input type="email" ref={emailRef} name="email" className="input w-full" placeholder="Email" required />
                                     </div>
 
                                     <div className='relative'>

@@ -6,6 +6,7 @@ const ForgotPassword = () => {
     const location = useLocation();
     return (
         <div>
+            <title>Forgot Password</title>
             <header>
                 <Navbar></Navbar>
             </header>
